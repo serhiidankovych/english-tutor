@@ -1,0 +1,375 @@
+{
+  "AnnouncementBar": {
+  "message": "Ще не знаєш англійську? Обирай українську версію!",
+  "buttonText": "Українська ✨"
+},
+    "Header": {
+      "logoAlt": "Viktoriia emoji",
+      "name": "Viktoriia",
+      "title": "English Tutor",
+      "navigation": {
+        "freeGift": "Your Free Gift",
+        "takeTest": "Take a Test",
+        "bookLesson": "Book Lesson"
+      }
+    },
+  "HeroSection": {
+    "mainTitle": "Your Better English",
+    "subTitle": "Starts With",
+    "tutorName": "Viktoriia!",
+    "description": "Transform your English skills with personalized lessons, proven methods, and a dedicated tutor who cares about your success.",
+    "buttons": {
+      "firstLesson": "Get Your First Lesson",
+      "welcomeVideo": "Watch My Welcome Video"
+    },
+    "skillsTitle": "My Skills"
+  },
+  "TutorProfile": {
+    
+    "tutor": {
+      "name": "Viktoriia 💅",
+      "title": "English Tutor",
+      "experience": "5+ Years Experience",
+      "telegramUsername": "@vikkktoriia_km",
+      "imageUrl": "/tutor-profile.jpg",
+      "badges": [
+        "Language Coach",
+        "Business English",
+        "Conversation Expert"
+      ]
+    },
+    "buttons": {
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "HeroStats": {
+    "stats": [
+      {
+        "icon": "GraduationCap",
+        "value": "Studied in the UK, Germany & Italy",
+        "image": "/graduation.png",
+        "highlight": "3 Countries"
+      },
+      {
+        "icon": "Globe",
+        "image": "/globe.png",
+        "value": "Well-Traveled & Culturally Fluent",
+        "highlight": "Global Perspective"
+      },
+      {
+        "icon": "Users",
+        "image": "/trust.png",
+        "value": "Trusted by Global Learners",
+        "highlight": "International Reach"
+      },
+      {
+        "icon": "Award",
+        "image": "/reward.png",
+        "value": "Attended Global Programs & Events",
+        "highlight": "Elite Training"
+      }
+    ]
+  },
+  "AboutMe": {
+    "title": "A Little About Me",
+    "description": "My journey through languages, cultures, and teaching.",
+    "noItemsTitle": "No items found in this category.",
+    "intro": {
+      "text": "Hello! I'm Viktoriia, a passionate linguist and dedicated English tutor from Ukraine. My love for language has taken me across Europe, from the canals of Venice to the forests of Germany and the shores of the UK. These experiences haven't just taught me about grammar and vocabulary; they've taught me about connection, culture, and the power of communication.",
+      "image": "/about-me.png",
+      "imageAlt": "Viktoriia",
+      "videoUrl": "https://www.youtube.com/embed/o_XVt5rdpFY?si=vsAK7EQHFyGEAQlB" ,
+      "videoTitle": "English Tutor Video"
+    },
+    "journeyTitle": "My Journey & Achievements",
+    "journeyDescription": "A visual diary of my academic and professional adventures.",
+    "categories": [
+      "All",
+      "Education",
+      "Study Abroad",
+      "Professional",
+      "Training"
+    ],
+    "noItemsMessage": "No items found in this category.",
+    "experiences": [
+      {
+        "id": 1,
+        "category": "Education",
+        "title": "Bachelor's Degree",
+        "location": "Petro Mohyla National University, Ukraine",
+        "dates": "Sept 2020 – June 2024",
+        "description": "Bachelor's degree in Germanic Languages and Literatures (Including Translation), the First is English.",
+        "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "GraduationCap"
+      },
+      {
+        "id": 2,
+        "category": "Education",
+        "title": "Master's Degree",
+        "location": "Petro Mohyla National University, Ukraine",
+        "dates": "Sept 2024 – Present",
+        "description": "Master's degree in Germanic Languages and Literatures (Including Translation), the First is English.",
+          "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "GraduationCap"
+      },
+      {
+        "id": 3,
+        "category": "Study Abroad",
+        "title": "Erasmus+ Exchange Program",
+        "location": "Ca' Foscari University of Venice, Italy",
+        "dates": "Feb 2022 – July 2022",
+        "description": "Enriched my perspective through the Erasmus+ exchange program, studying in a vibrant, historical setting.",
+        "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "Plane"
+      },
+      {
+        "id": 4,
+        "category": "Study Abroad",
+        "title": "StudyBridge Ukraine-Saar Project",
+        "location": "Saarland University, Germany",
+        "dates": "Aug 2022 – Dec 2022",
+        "description": "Participated in the StudyBridge Ukraine-Saar Project, focusing on intensive language and cultural immersion.",
+        "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "University"
+      },
+      {
+        "id": 5,
+        "category": "Study Abroad",
+        "title": "Visiting Undergraduate Program",
+        "location": "Swansea University, UK",
+        "dates": "Sept 2023 – Jan 2024",
+        "description": "Explored Business Management & Marketing, gaining insights into global business practices.",
+        "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "BookOpen"
+      },
+      {
+        "id": 6,
+        "category": "Study Abroad",
+        "title": "StudyBridge Ukraine-Saar Project (Return)",
+        "location": "Saarland University, Germany",
+        "dates": "Sept 2024 – May 2025",
+        "description": "Continuing my journey with the StudyBridge project, deepening my academic and cultural connections.",
+        "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "University"
+      },
+      {
+        "id": 7,
+        "category": "Study Abroad",
+        "title": "Summer School",
+        "location": "Saarland University, Germany",
+        "dates": "May 2025",
+        "description": "Set to explore the critical topic of 'Witnessing Borders in Flux' through the lens of war, migration, and media.",
+           "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "BookOpen"
+      },
+      {
+        "id": 8,
+        "category": "Professional",
+        "title": "Online English Tutor",
+        "location": "Remote",
+        "dates": "2022 - Present",
+        "description": "Provided personalized English language instruction to students of various levels, focusing on conversational skills, grammar, and exam preparation.",
+          "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "Briefcase"
+      },
+      {
+        "id": 9,
+        "category": "Professional",
+        "title": "Author: \"The Birmingham Dialect in Peaky Blinders\"",
+        "location": "Academic Coursework",
+        "dates": "2022",
+        "description": "Conducted linguistic analysis on the distinctive features of the Birmingham dialect as portrayed in the popular television series.",
+          "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "BookOpen"
+      },
+      {
+        "id": 10,
+        "category": "Professional",
+        "title": "Author: 'Developing Listening Skills with Video'",
+        "location": "Academic Coursework",
+        "dates": "2023",
+        "description": "Researched and authored a paper on methods for developing English listening skills in high school students using authentic video materials.",
+         "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "BookOpen"
+      },
+      {
+        "id": 11,
+        "category": "Professional",
+        "title": "Author: 'Linguostylistic Features of Leaders' Speeches'",
+        "location": "Academic Coursework",
+        "dates": "2024",
+        "description": "Analyzed the rhetorical and stylistic devices used in the speeches of modern business leaders to persuade and inspire.",
+         "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "BookOpen"
+      },
+      {
+        "id": 12,
+        "category": "Training",
+        "title": "An Introduction to Proofreading",
+        "location": "Alison (Online Platform)",
+        "dates": "Feb 2025",
+        "description": "Completed a certified course on the fundamentals of proofreading, including grammar, style, and common errors.",
+         "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "Presentation"
+      },
+      {
+        "id": 13,
+        "category": "Training",
+        "title": "Techniques for Secondary & Adult Learners",
+        "location": "Cambridge University Press",
+        "dates": "Feb 2025",
+        "description": "Attended a webinar focused on maximizing learning moments and engagement with secondary and adult students.",
+         "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "Presentation"
+      },
+      {
+        "id": 14,
+        "category": "Training",
+        "title": "How to Write Great Learning Outcomes",
+        "location": "British Council",
+        "dates": "Mar 2025",
+        "description": "Gained skills in defining clear, measurable, and effective learning outcomes for lesson planning.",
+          "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "Presentation"
+      },
+      {
+        "id": 15,
+        "category": "Training",
+        "title": "The Secrets to Writing Classroom Materials",
+        "location": "British Council",
+        "dates": "Mar 2025",
+        "description": "Learned best practices for creating engaging, relevant, and effective materials for the language classroom.",
+         "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "Presentation"
+      },
+      {
+        "id": 16,
+        "category": "Training",
+        "title": "How to Create Lessons That Work",
+        "location": "British Council",
+        "dates": "Mar 2025",
+        "description": "Completed a webinar on structuring effective and impactful lessons that cater to diverse student needs.",
+           "imageSrc": "https://images.unsplash.com/photo-1754770584877-73ba9341671c?q=80&w=1170&auto=format&fit=crop",
+        "icon": "Presentation"
+      }
+    ]
+  },
+  "TestSection": {
+    "title": "English Level Test",
+    "description": "Test your English proficiency and level with our interactive test.",
+    "testInfo": {
+      "badge": "Smart Assessment",
+      "title": "Intelligent Adaptive Testing",
+      "description": "Our AI-powered test adapts to your responses, providing accurate results in less time. Get personalized feedback and recommendations for your learning journey.",
+      "buttonText": "Start Your Test Now",
+      "image": "/sword.png",
+      "imageAlt": "English Level Test"
+    },
+    "levelsTitle": "CEFR Proficiency Levels",
+    "levels": [
+      {
+        "level": "A1",
+        "name": "Beginner",
+        "description": "Can understand and use familiar everyday expressions and basic phrases",
+        "color": "bg-green-100 text-green-800 border-green-200"
+      },
+      {
+        "level": "A2",
+        "name": "Elementary",
+        "description": "Can communicate in simple tasks requiring direct exchange of information",
+        "color": "bg-blue-100 text-blue-800 border-blue-200"
+      },
+      {
+        "level": "B1",
+        "name": "Intermediate",
+        "description": "Can handle most situations likely to arise while traveling in English-speaking areas",
+        "color": "bg-yellow-100 text-yellow-800 border-yellow-200"
+      },
+      {
+        "level": "B2",
+        "name": "Upper Intermediate",
+        "description": "Can interact with fluency and spontaneity with native speakers",
+        "color": "bg-orange-100 text-orange-800 border-orange-200"
+      },
+      {
+        "level": "C1",
+        "name": "Advanced",
+        "description": "Can express ideas fluently and spontaneously without searching for expressions",
+        "color": "bg-purple-100 text-purple-800 border-purple-200"
+      },
+      {
+        "level": "C2",
+        "name": "Proficient",
+        "description": "Can understand virtually everything heard or read with ease",
+        "color": "bg-red-100 text-red-800 border-red-200"
+      }
+    ],
+    "footerText": "Ready to discover where you stand on your English learning journey?",
+    "footerButtonText": "Take the Assessment"
+  },
+  "GiftsSection": {
+    "title": "Free Learning Resources",
+    "description": "Download these exclusive materials to accelerate your English learning journey",
+    "downloadButtonText": "Download Free",
+    "gifts": [
+      {
+        "id": 1,
+        "title": "English Grammar Fundamentals",
+        "description": "A comprehensive guide covering essential grammar rules, common mistakes, and practical exercises to improve your English foundation.",
+        "image": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=250&fit=crop&auto=format",
+        "fileType": "PDF",
+        "downloadUrl": "/downloads/grammar-fundamentals.pdf"
+      },
+      {
+        "id": 2,
+        "title": "Conversation Starter Kit",
+        "description": "100+ conversation topics and phrases to help you practice speaking English confidently in any situation.",
+        "image": "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=400&h=250&fit=crop&auto=format",
+        "fileType": "PDF",
+        "downloadUrl": "/downloads/conversation-kit.pdf"
+      }
+    ]
+  },
+  "LearningProcess": {
+    "header": "English for ",
+    "englishFor": ["Teens", "Travel", "Work", "Adults", "Soul", "Kids"],
+    "description": "Transform your English skills with personalized lessons, proven strategies, and expert guidance.",
+    "journeyTitle": "Your Learning Journey",
+    "journeyDescription": "Follow our proven 4-step process",
+    "processSteps": [
+      {
+        "step": "Step 1",
+        "title": "Assessment & Goals",
+        "description": "We start by understanding your current level and defining clear, achievable learning objectives tailored to your needs.",
+        "icon": "CheckCircle",
+        "image": "/step-1.png",
+        "color": "rgba(194, 22, 22, 0.1)"
+      },
+      {
+        "step": "Step 2",
+        "title": "Personalized Plan",
+        "description": "Create a customized learning roadmap with interactive lessons, practical exercises, and real-world applications.",
+        "icon": "BookOpen",
+        "image": "/step-2.png",
+        "color": "rgba(194, 111, 22, 0.1)"
+      },
+      {
+        "step": "Step 3",
+        "title": "Practice & Feedback",
+        "description": "Engage in conversational practice with immediate feedback and corrections to build confidence and fluency.",
+        "icon": "MessageCircle",
+        "image": "/step-3.png",
+        "color": "rgba(191, 194, 22, 0.1)"
+      },
+      {
+        "step": "Step 4",
+        "title": "Progress Tracking",
+        "description": "Monitor your improvement with regular assessments and celebrate milestones as you achieve your goals.",
+        "icon": "Award",
+        "image": "/step-4.png",
+        "color": "rgba(22, 148, 194, 0.1)"
+      }
+    ]
+  }
+}
