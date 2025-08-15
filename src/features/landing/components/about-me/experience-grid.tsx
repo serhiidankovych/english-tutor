@@ -1,6 +1,5 @@
 import React from "react";
 import { BookOpen } from "lucide-react";
-
 import { Experience, ExperienceCard } from "./experience-card";
 import { iconMap } from "../../utils/about-me";
 
@@ -30,17 +29,35 @@ export function ExperienceGrid({
   }
 
   return (
-    <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
-      {experiences.map((experience) => {
-        const IconComponent = iconMap[experience.icon];
-        return (
-          <ExperienceCard
-            key={experience.id}
-            experience={experience}
-            IconComponent={IconComponent}
-          />
-        );
-      })}
+    <div className="w-full">
+      <div className="md:hidden overflow-x-auto">
+        <div className="flex gap-6 pb-4 min-w-max">
+          {experiences.map((experience) => {
+            const IconComponent = iconMap[experience.icon];
+            return (
+              <div key={experience.id} className="flex-shrink-0 w-80">
+                <ExperienceCard
+                  experience={experience}
+                  IconComponent={IconComponent}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="hidden md:grid gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+        {experiences.map((experience) => {
+          const IconComponent = iconMap[experience.icon];
+          return (
+            <ExperienceCard
+              key={experience.id}
+              experience={experience}
+              IconComponent={IconComponent}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

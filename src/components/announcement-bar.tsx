@@ -19,10 +19,8 @@ export default function AnnouncementBar() {
 
   return (
     <div className="bg-primary text-primary-foreground">
-      <div className="container mx-auto flex items-center justify-center gap-x-4 p-2 text-center text-sm">
-        <p>
-          <span className="hidden sm:inline text-lg">👀</span> {t("message")}
-        </p>
+      <div className="container mx-auto flex items-center justify-center gap-2 py-2 px-4 text-sm">
+        <p>👀 {t("message")}</p>
         <Button variant="secondary" size="sm" onClick={handleLanguageSwitch}>
           {t("buttonText")}
         </Button>
