@@ -7,6 +7,7 @@
       "logoAlt": "Viktoriia emoji",
       "name": "Viktoriia",
       "title": "English Tutor",
+      "language": "Language",
       "navigation": {
         "freeGift": "Your Free Gift",
         "takeTest": "Take a Test",
@@ -338,38 +339,39 @@
     "journeyTitle": "Your Learning Journey",
     "journeyDescription": "Follow our proven 4-step process",
     "processSteps": [
-      {
-        "step": "Step 1",
-        "title": "Assessment & Goals",
-        "description": "We start by understanding your current level and defining clear, achievable learning objectives tailored to your needs.",
-        "icon": "CheckCircle",
-        "image": "/step-1.png",
-        "color": "rgba(194, 22, 22, 0.1)"
-      },
-      {
-        "step": "Step 2",
-        "title": "Personalized Plan",
-        "description": "Create a customized learning roadmap with interactive lessons, practical exercises, and real-world applications.",
-        "icon": "BookOpen",
-        "image": "/step-2.png",
-        "color": "rgba(194, 111, 22, 0.1)"
-      },
-      {
-        "step": "Step 3",
-        "title": "Practice & Feedback",
-        "description": "Engage in conversational practice with immediate feedback and corrections to build confidence and fluency.",
-        "icon": "MessageCircle",
-        "image": "/step-3.png",
-        "color": "rgba(191, 194, 22, 0.1)"
-      },
-      {
-        "step": "Step 4",
-        "title": "Progress Tracking",
-        "description": "Monitor your improvement with regular assessments and celebrate milestones as you achieve your goals.",
-        "icon": "Award",
-        "image": "/step-4.png",
-        "color": "rgba(22, 148, 194, 0.1)"
-      }
-    ]
+  {
+    "step": "Step 1",
+    "title": "Assessment & Goals",
+    "description": "We start by understanding your current level and defining clear, achievable learning objectives tailored to your needs.",
+    "icon": "CheckCircle",
+    "image": "/step-1.png",
+    "color": "bg-sky-500"
+  },
+  {
+    "step": "Step 2",
+    "title": "Personalized Plan",
+    "description": "Create a customized learning roadmap with interactive lessons, practical exercises, and real-world applications.",
+    "icon": "BookOpen",
+    "image": "/step-2.png",
+    "color": "bg-amber-400"
+  },
+  {
+    "step": "Step 3",
+    "title": "Practice & Feedback",
+    "description": "Engage in conversational practice with immediate feedback and corrections to build confidence and fluency.",
+    "icon": "MessageCircle",
+    "image": "/step-3.png",
+    "color": "bg-rose-400"
+  },
+  {
+    "step": "Step 4",
+    "title": "Progress Tracking",
+    "description": "Monitor your improvement with regular assessments and celebrate milestones as you achieve your goals.",
+    "icon": "Award",
+    "image": "/step-4.png",
+    "color": "bg-emerald-500"
+  }
+]
+
   }
 }
