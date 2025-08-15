@@ -71,37 +71,79 @@ export function TestSection() {
           <Award className="h-6 w-6 text-primary" />
           <h2 className="text-3xl font-bold text-center">{t("levelsTitle")}</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {levels.map(
-            (
-              level: {
-                level: string;
-                name: string;
-                description: string;
-                color: string;
-              },
-              index: number
-            ) => (
-              <Card
-                key={level.level || index}
-                className="transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
-              >
-                <CardHeader className="pb-3">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-lg">{level.name}</CardTitle>
-                    <Badge variant="outline" className={level.color}>
-                      {level.level}
-                    </Badge>
+
+        <div className="w-full">
+          <div className="lg:hidden overflow-x-auto">
+            <div className="flex gap-6 pb-4 min-w-max">
+              {levels.map(
+                (
+                  level: {
+                    level: string;
+                    name: string;
+                    description: string;
+                    color: string;
+                  },
+                  index: number
+                ) => (
+                  <div
+                    key={level.level || index}
+                    className="flex-shrink-0 w-80"
+                  >
+                    <Card className="h-full transition-all duration-200 hover:shadow-lg hover:-translate-y-1">
+                      <CardHeader className="pb-3">
+                        <div className="flex items-center justify-between">
+                          <CardTitle className="text-lg">
+                            {level.name}
+                          </CardTitle>
+                          <Badge variant="outline" className={level.color}>
+                            {level.level}
+                          </Badge>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-sm leading-relaxed">
+                          {level.description}
+                        </CardDescription>
+                      </CardContent>
+                    </Card>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-sm leading-relaxed">
-                    {level.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            )
-          )}
+                )
+              )}
+            </div>
+          </div>
+
+          <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {levels.map(
+              (
+                level: {
+                  level: string;
+                  name: string;
+                  description: string;
+                  color: string;
+                },
+                index: number
+              ) => (
+                <Card
+                  key={level.level || index}
+                  className="transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
+                >
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="text-lg">{level.name}</CardTitle>
+                      <Badge variant="outline" className={level.color}>
+                        {level.level}
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-sm leading-relaxed">
+                      {level.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              )
+            )}
+          </div>
         </div>
       </div>
 
