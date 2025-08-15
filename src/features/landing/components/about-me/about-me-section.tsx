@@ -35,7 +35,7 @@ export function AboutMeSection() {
       <IntroSection introData={introData} />
 
       <VideoSection
-        videoUrl={introData.videoUrl}
+        videoUrl={introData.videoUrl || ""}
         videoTitle={introData.videoTitle}
       />
 
