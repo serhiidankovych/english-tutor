@@ -18,10 +18,10 @@ export function LearningProcessSection() {
       titleLevel="h1"
     >
       <div className="flex flex-col md:flex-row gap-12 items-start">
-        <div className="md:w-1/4 sticky top-25">
-          <div className="relative rotate-[-4deg] max-w-xl bg-white/50 mx-auto bg-background border border-muted rounded-lg shadow-md p-6 notebook-paper before:content-[''] before:absolute before:inset-0 before:bg-[url('/paper-texture.png')] before:opacity-10 before:rounded-lg before:pointer-events-none">
+        <div className="md:w-1/4 sm:sticky lg:block top-25">
+          <div className="relative rotate-[-4deg] max-w-xl border border-muted rounded-lg shadow-md p-6 notebook-paper before:content-[''] before:absolute before:inset-0 before:bg-[url('/paper-texture.png')] before:opacity-10 before:rounded-lg before:pointer-events-none">
             <Image
-              src="/paperclip2.png"
+              src="/paperclip.png"
               alt="Paperclip"
               width={80}
               height={80}
@@ -35,8 +35,22 @@ export function LearningProcessSection() {
             </p>
           </div>
         </div>
-        <div className="md:w-2/3">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <div className="md:w-2/3 w-full">
+          <div className="lg:hidden overflow-x-auto">
+            <div className="flex gap-6 pb-4 min-w-max">
+              {processSteps.map((step: ProcessStepCardProps, index: number) => (
+                <div
+                  key={step.step || index}
+                  className="flex-shrink-0 w-80 transform transition-all duration-300 hover:scale-105"
+                >
+                  <ProcessStepCard {...step} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="hidden lg:grid lg:grid-cols-2 gap-6 justify-items-stretch">
             {processSteps.map((step: ProcessStepCardProps, index: number) => (
               <div
                 key={step.step || index}

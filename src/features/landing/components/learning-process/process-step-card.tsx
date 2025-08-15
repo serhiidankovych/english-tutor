@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export interface ProcessStepCardProps {
   step: string;
@@ -18,14 +19,11 @@ export function ProcessStepCard({
   color,
 }: ProcessStepCardProps) {
   return (
-    <Card
-      className="relative border-0 group"
-      style={{ backgroundColor: color }}
-    >
+    <Card className={cn("relative border-0 group", color)}>
       <CardHeader className="pb-0 transition-opacity duration-300">
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-full bg-primary/10 text-primary"></div>
-          <span className="text-sm font-semibold text-primary">{step}</span>
+          <div className="p-2 rounded-full bg-primary/10 text-primary boorder border-1 border-white "></div>
+          <span className="text-md f text-white ">{step}</span>
         </div>
       </CardHeader>
       <CardContent className="relative">
@@ -33,11 +31,10 @@ export function ProcessStepCard({
           <Image src={image} alt={title} fill className="object-contain" />
         </div>
         <div
-          className="relative z-10 p-6  h-[150px] rounded-xl bg-white/30 backdrop-blur-xl border border-white/40 group-hover:opacity-0"
+          className="relative z-10 p-6  h-[150px]  rounded-xl bg-white/20 backdrop-blur-xl border border-white/20 group-hover:opacity-0"
           style={{
             clipPath:
               "polygon(0 0, 35% 0, 42% 2rem, 100% 2rem, 100% 100%, 0 100%)",
-            border: "1px solid rgba(255, 255, 255, 0.52)",
           }}
         >
           <div className="pt-8 transition-opacity duration-300 group-hover:opacity-0">
@@ -47,12 +44,12 @@ export function ProcessStepCard({
           </div>
         </div>
         <div
-          className="absolute inset-0 flex p-6 text-center transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-          style={{
-            backgroundColor: color,
-          }}
+          className={cn(
+            "absolute inset-0 flex p-6 text-center transition-opacity duration-300 opacity-0 group-hover:opacity-100",
+            color
+          )}
         >
-          <p className="text-md leading-relaxed text-foreground text-justify">
+          <p className="text-md font-bold  text-white text-justify">
             {description}
           </p>
         </div>
