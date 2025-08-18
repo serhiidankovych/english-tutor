@@ -13,9 +13,12 @@ export function HeroSection() {
   return (
     <div className="flex flex-col px-2 max-w-7xl mx-auto gap-6">
       <div>
-        <TutorProfileCard />
+        <div className="block lg:hidden mb-6">
+          <TutorProfileCard />
+        </div>
+
         <section className="order-3 lg:order-2 text-center lg:text-left flex flex-col items-center lg:items-start">
-          <div className="hidden lg:block w-full  mx-auto lg:mx-0">
+          <div className="hidden lg:block w-full mx-auto lg:mx-0">
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight flex flex-col break-words">
               {t("mainTitle")}
               <div className="flex flex-wrap items-center gap-2">
