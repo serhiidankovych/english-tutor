@@ -1,138 +1,99 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useTestState } from "../hooks/use-test-state";
-import { useTestPersistence } from "../hooks/use-test-persistence";
+import React, { useEffect } from "react";
+import { useTestStore } from "../store/test-store";
 import { testQuestions } from "../data/test-questions";
-import { TestData } from "../types/test";
 
-import { ProgressBar } from "../components/progress-bar";
 import { QuestionCard } from "../components/question-card";
 import { QuestionNavigation } from "../components/question-navigation";
 import { TestResults } from "../components/test-results";
 
-import { Badge } from "@/components/ui/badge";
-import { Loader2, CheckCircle } from "lucide-react";
-
-const SaveStatusIndicator = ({ isLoading }: { isLoading: boolean }) => (
-  <div className="flex justify-end">
-    {isLoading ? (
-      <Badge variant="outline">
-        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-        Saving...
-      </Badge>
-    ) : (
-      <Badge className="bg-green-100 text-green-800 border-green-200 hover:bg-green-100">
-        <CheckCircle className="mr-2 h-4 w-4" />
-        Saved
-      </Badge>
-    )}
-  </div>
-);
+import { QuestionNavigationSkeleton } from "../components/question-navigation-skeleton";
+import { QuestionCardSkeleton } from "../components/question-card-skeleton";
+import { Answer } from "../types/test";
 
 export default function TestPage() {
-  const { testData, updateTestData } = useTestState();
-  const { savedTestData, saveTestData, isLoading } = useTestPersistence();
-  const [currentAnswer, setCurrentAnswer] = useState<string>("");
-  const [hasInitialized, setHasInitialized] = useState(false);
+  const {
+    testData,
+    currentAnswer,
+    hasInitialized,
+    isLoading,
+    updateTestData,
+    setCurrentAnswer,
+    initializeFromUrl,
+    initializeCurrentAnswer,
+    handleAnswerSubmit,
+    goToStep,
+    goToPrevious,
+    resetTest,
+    getCurrentQuestion,
+    canGoPrevious,
+    isLastQuestion,
+  } = useTestStore();
 
   useEffect(() => {
-    if (!hasInitialized && savedTestData !== undefined) {
-      const urlParams = new URLSearchParams(window.location.search);
-      const hasUrlData = urlParams.has("step") || urlParams.has("answers");
-      if (!hasUrlData && savedTestData) {
-        updateTestData(savedTestData);
-      }
-      setHasInitialized(true);
+    if (!hasInitialized) {
+      initializeFromUrl();
     }
-  }, [savedTestData, hasInitialized, updateTestData]);
-
-  useEffect(() => {
-    const currentQuestion = testQuestions[testData.currentStep];
-    if (currentQuestion) {
-      setCurrentAnswer(testData.answers[currentQuestion.id] || "");
-    }
-  }, [testData.currentStep, testData.answers]);
+  }, [hasInitialized, initializeFromUrl]);
 
   useEffect(() => {
     if (hasInitialized) {
-      const debounceTimer = setTimeout(() => {
-        saveTestData(testData);
-      }, 1000);
-      return () => clearTimeout(debounceTimer);
+      initializeCurrentAnswer();
     }
-  }, [testData, saveTestData, hasInitialized]);
+  }, [testData.currentStep, hasInitialized, initializeCurrentAnswer]);
 
-  const handleAnswerSubmit = () => {
-    if (!currentAnswer.trim()) return;
-    const currentQuestion = testQuestions[testData.currentStep];
-    const newAnswers = {
-      ...testData.answers,
-      [currentQuestion.id]: currentAnswer,
-    };
-    const isLastQuestion = testData.currentStep === testQuestions.length - 1;
-    const newTestData: TestData = {
-      currentStep: isLastQuestion
-        ? testData.currentStep
-        : testData.currentStep + 1,
-      answers: newAnswers,
-      completed: isLastQuestion,
-    };
-    updateTestData(newTestData);
-    saveTestData(newTestData);
+  const handleAnswerChange = (answer: Answer) => {
+    setCurrentAnswer(answer);
+    const currentQuestion = getCurrentQuestion();
+    if (currentQuestion) {
+      updateTestData({
+        ...testData,
+        answers: {
+          ...testData.answers,
+          [currentQuestion.id]: answer,
+        },
+      });
+    }
   };
 
-  const goToStep = (step: number) => {
-    updateTestData({ ...testData, currentStep: step, completed: false });
+  const handleNext = () => {
+    handleAnswerSubmit();
   };
 
-  const goToPrevious = () => {
-    if (testData.currentStep > 0) goToStep(testData.currentStep - 1);
-  };
-
-  const resetTest = () => {
-    const newTestData: TestData = {
-      currentStep: 0,
-      answers: {},
-      completed: false,
-    };
-    updateTestData(newTestData);
-    saveTestData(newTestData);
-  };
-
-  const currentQuestion = testQuestions[testData.currentStep];
+  const currentQuestion = getCurrentQuestion();
 
   if (!hasInitialized) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="flex flex-col items-center gap-4">
-          <Loader2 className="h-12 w-12 animate-spin text-primary" />
-          <p className="text-muted-foreground">Loading your test...</p>
+      <main className="min-h-screen bg-background py-8 px-4">
+        <div className="container max-w-2xl mx-auto flex flex-col gap-6">
+          <QuestionNavigationSkeleton />
+          <QuestionCardSkeleton />
         </div>
-      </div>
+      </main>
     );
   }
 
   return (
     <main className="min-h-screen bg-background py-8 px-4">
       <div className="container max-w-2xl mx-auto flex flex-col gap-6">
-        <SaveStatusIndicator isLoading={isLoading} />
-
-        <ProgressBar
-          currentStep={testData.currentStep}
-          totalSteps={testQuestions.length}
-          hasCurrentAnswer={!!currentAnswer}
+        <QuestionNavigation
+          questions={testQuestions}
+          testData={testData}
+          onNavigateToStep={goToStep}
+          isLoading={isLoading}
         />
 
         {!testData.completed ? (
           <QuestionCard
+            index={testData.currentStep + 1}
             question={currentQuestion}
             currentAnswer={currentAnswer}
-            onAnswerChange={setCurrentAnswer}
-            onNext={handleAnswerSubmit}
+            onAnswerChange={handleAnswerChange}
+            onNext={handleNext}
             onPrevious={goToPrevious}
-            canGoPrevious={testData.currentStep > 0}
-            isLastQuestion={testData.currentStep === testQuestions.length - 1}
+            canGoPrevious={canGoPrevious()}
+            isLastQuestion={isLastQuestion()}
           />
         ) : (
           <TestResults
@@ -141,12 +102,6 @@ export default function TestPage() {
             onRestart={resetTest}
           />
         )}
-
-        <QuestionNavigation
-          questions={testQuestions}
-          testData={testData}
-          onNavigateToStep={goToStep}
-        />
       </div>
     </main>
   );

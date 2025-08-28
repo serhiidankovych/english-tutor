@@ -21,7 +21,7 @@ const noto = Noto_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Viktoriia – Professional English Tutor from Ukraine",
+  title: "Viktoriia Kuzmych – Professional English Tutor from Ukraine",
   description:
     "Learn English with Viktoriia – an experienced tutor from Ukraine offering personalized lessons online and in person. Improve grammar, speaking, and confidence with engaging, tailored lessons.",
   keywords: [
@@ -52,6 +52,11 @@ export const metadata: Metadata = {
     ],
     locale: "en_US",
     type: "website",
+  },
+  icons: {
+    icon: "/graduation.png",
+    shortcut: "/graduation.png",
+    apple: "/graduation.png",
   },
 };
 

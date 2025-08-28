@@ -1,5 +1,4 @@
 import React from "react";
-import { Question } from "../types/test";
 import {
   Card,
   CardContent,
@@ -9,14 +8,23 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { useTranslations } from "next-intl";
+import { Question, Answer } from "../types/test";
+
+import { AudioQuestion } from "./audio-question";
+import { DragAndDropSentence } from "./drag-and-drop-sentence";
+import { MultipleChoiceImage } from "./multiple-choice-image";
+import { MultipleChoiceText } from "./multiple-choice-text";
+import { TextInput } from "./text-input";
+import WordBankSelection from "./word-bank-selection";
+import { useTestStore } from "../store/test-store";
 
 interface QuestionCardProps {
+  index: number;
   question: Question;
-  currentAnswer: string;
-  onAnswerChange: (answer: string) => void;
+  currentAnswer: Answer;
+  onAnswerChange: (answer: Answer) => void;
   onNext: () => void;
   onPrevious: () => void;
   canGoPrevious: boolean;
@@ -24,6 +32,7 @@ interface QuestionCardProps {
 }
 
 export const QuestionCard: React.FC<QuestionCardProps> = ({
+  index,
   question,
   currentAnswer,
   onAnswerChange,
@@ -32,33 +41,81 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   canGoPrevious,
   isLastQuestion,
 }) => {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Question</CardTitle>
-        <CardDescription>{question.question}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        {question.type === "multiple-choice" ? (
-          <RadioGroup
-            value={currentAnswer}
-            onValueChange={onAnswerChange}
-            className="space-y-2"
-          >
-            {question.options?.map((option) => (
-              <div key={option} className="flex items-center space-x-2">
-                <RadioGroupItem value={option} id={option} />
-                <Label htmlFor={option}>{option}</Label>
-              </div>
-            ))}
-          </RadioGroup>
-        ) : (
-          <Input
-            value={currentAnswer}
-            onChange={(e) => onAnswerChange(e.target.value)}
-            placeholder="Your answer"
+  const t = useTranslations("Test");
+  const { isAnswerProvided } = useTestStore();
+
+  const renderQuestionComponent = () => {
+    switch (question.type) {
+      case "multiple-choice-text":
+        return (
+          <MultipleChoiceText
+            question={question}
+            value={typeof currentAnswer === "string" ? currentAnswer : ""}
+            onChange={onAnswerChange}
           />
-        )}
+        );
+      case "multiple-choice-image":
+        return (
+          <MultipleChoiceImage
+            question={question}
+            value={typeof currentAnswer === "string" ? currentAnswer : ""}
+            onChange={onAnswerChange}
+          />
+        );
+      case "text-input":
+        return (
+          <TextInput
+            question={question}
+            value={typeof currentAnswer === "string" ? currentAnswer : ""}
+            onChange={onAnswerChange}
+          />
+        );
+      case "drag-and-drop":
+        return (
+          <DragAndDropSentence
+            question={question}
+            value={Array.isArray(currentAnswer) ? currentAnswer : []}
+            onChange={onAnswerChange}
+          />
+        );
+      case "audio":
+        return (
+          <AudioQuestion
+            question={question}
+            value={currentAnswer}
+            onChange={onAnswerChange}
+          />
+        );
+      case "word-bank-selection":
+        return (
+          <WordBankSelection
+            question={question}
+            value={typeof currentAnswer === "string" ? currentAnswer : ""}
+            onChange={onAnswerChange}
+          />
+        );
+      default:
+        return <div>Unsupported question type.</div>;
+    }
+  };
+
+  return (
+    <Card className="w-full">
+      <CardHeader>
+        <div className="flex justify-between items-center mb-4">
+          <CardTitle>
+            <Badge>
+              {index}. {t("question")}
+            </Badge>
+          </CardTitle>
+          <Badge variant="secondary">{question.category}</Badge>
+        </div>
+        <CardDescription className="text-lg text-foreground pt-2">
+          {question.question}
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="min-h-[150px]">
+        {renderQuestionComponent()}
       </CardContent>
       <CardFooter className="flex justify-between">
         <Button
@@ -66,10 +123,10 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           onClick={onPrevious}
           disabled={!canGoPrevious}
         >
-          Previous
+          {t("previousQuestion")}
         </Button>
-        <Button onClick={onNext} disabled={!currentAnswer.trim()}>
-          {isLastQuestion ? "Finish Test" : "Next"}
+        <Button onClick={onNext} disabled={!isAnswerProvided(currentAnswer)}>
+          {isLastQuestion ? t("finishTest") : t("nextQuestion")}
         </Button>
       </CardFooter>
     </Card>

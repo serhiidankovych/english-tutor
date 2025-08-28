@@ -373,5 +373,14 @@
   }
 ]
 
-  }
+  },
+   "Test": {
+    "title": "Quick English Test for A1-B2",
+    "description": "Answer all questions to complete the test. Your progress is automatically saved.",
+    "motivation":["Keep going!","You can do it!","You're doing great!"],
+    "question": "Question",
+     "nextQuestion": "Next",
+     "previousQuestion": "Previous",
+     "finishTest": "Finish Test"
+   }
 }

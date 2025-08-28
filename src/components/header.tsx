@@ -74,6 +74,7 @@ export default function Header() {
               <Image
                 src="/girls.png"
                 alt={t("logoAlt")}
+                priority
                 width={45}
                 height={45}
                 className="sm:w-[50px] sm:h-[50px] rounded-full ring-2 ring-transparent group-hover:ring-primary/20 transition-all duration-200"
@@ -164,6 +165,7 @@ export default function Header() {
                     <Image
                       src="/girls.png"
                       alt={t("logoAlt")}
+                      priority
                       width={36}
                       height={36}
                       className="rounded-full ring-2 ring-primary/20"

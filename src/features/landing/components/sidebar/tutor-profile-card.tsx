@@ -5,6 +5,7 @@ import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GlassContainer } from "@/components/glass-container";
 import { MessageCircleDashed, Send } from "lucide-react";
+import ProgressiveBlur from "@/components/progressive-blur";
 
 export function TutorProfileCard() {
   const t = useTranslations("TutorProfile");
@@ -18,8 +19,8 @@ export function TutorProfileCard() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('${tutorData.imageUrl}')` }}
         />
+        <ProgressiveBlur height="50%" position="bottom" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-[250px] bg-gradient-to-t from-black/70 to-transparent backdrop-blur-sm" />
         <div className="relative z-10 h-full flex flex-col justify-end p-6">
           <div className="space-y-4 text-center">
             <CardTitle className="text-3xl font-bold text-white drop-shadow-lg">
